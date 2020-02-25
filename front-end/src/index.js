@@ -43,6 +43,10 @@ const initialState = {
 
 const store = createStore(repositoryReducer, initialState)
 
+// Redux manages local data
+// Apollo manage remote data
+// "When using Apollo Client instead of Redux for remote data, you can 100% rely on its caching, normalization and request states."
+
 ReactDOM.render(
     <ApolloProvider client={client}>
       <Provider store={store}>
@@ -52,7 +56,4 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
