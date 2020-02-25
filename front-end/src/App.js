@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost'
+import { connect } from 'react-redux';
 // import { graphql } from "graphql"
 
 const TodosQuery = gql`
@@ -23,6 +24,7 @@ function App() {
         <p>
          {data.todos[0].text}
         </p>
+        {/* <userProfile/> */}
       </header>
     </div>
   );
