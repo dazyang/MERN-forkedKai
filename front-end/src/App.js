@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost'
-// import { graphql } from "apollo-boost"
+// import { graphql } from "graphql"
 
 const TodosQuery = gql`
   {
@@ -29,3 +29,4 @@ function App() {
 }
 
 export default App;
+// export default graphql(TodosQuery)(App);
