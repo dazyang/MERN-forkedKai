@@ -37,7 +37,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
+**How to use Redux with Apollo Client and GraphQL in React**  
 https://www.robinwieruch.de/react-redux-apollo-client-state-management-tutorial   
 
-**Using Redux with React Hooks **
+**Using Redux with React Hooks**  
 https://thoughtbot.com/blog/using-redux-with-react-hooks

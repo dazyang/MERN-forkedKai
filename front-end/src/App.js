@@ -6,21 +6,21 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import UserProfile from './components/page/UserProfile'
 
-// const TodosQuery = gql`
-//   {
-//     todos {
-//       id
-//       text
-//       complete
-//     }
-//   }
-// `
+const TodosQuery = gql`
+  {
+    todos {
+      id
+      text
+      complete
+    }
+  }
+`
 
-// const UpdateMutation = gql`
-//   mutation($id: ID!, $text: String!, $complet: Boolean!) {
-//     updateTodo(id: $id, text: $text, complet: $complet)    
-//   }
-// `
+const UpdateMutation = gql`
+  mutation($id: ID!, $text: String!, $complet: Boolean!) {
+    updateTodo(id: $id, text: $text, complet: $complet)    
+  }
+`
 function App() {
   const { loading, error, data } = useQuery(TodosQuery)
   if (loading) return <p>Loading...</p>;
