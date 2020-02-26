@@ -16,7 +16,7 @@ const Todo = mongoose.model("Todo", {
 //GraphQL Schema
 // hello takes one argument 'name', String is the dataType, and return String Type
 const typeDefs = `
-type Query {
+  type Query {
     hello(name: String): String!
     todos:[Todo]
   }
@@ -24,6 +24,12 @@ type Query {
     id: ID!
     text: String!
     complete: Boolean!
+  }
+  type userProfiles {
+    id: ID!
+    username: String!
+    score: Number!
+    recipes: String!
   }
   type Mutation {
     createTodo(text: String!): Todo
