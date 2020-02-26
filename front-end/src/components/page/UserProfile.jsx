@@ -8,8 +8,12 @@ function UserProfile() {
 
   return(
     <div>
-    {username}
-    {scores}
+    <p>
+      Name: {username}
+    </p>
+    <p>
+      Score: {scores}
+    </p>
     </div>
   )
 }
