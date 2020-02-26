@@ -12,7 +12,6 @@ const Todo = mongoose.model("Todo", {
   complete: Boolean
 })
 
-
 //GraphQL Schema
 // hello takes one argument 'name', String is the dataType, and return String Type
 const typeDefs = `
@@ -28,12 +27,12 @@ const typeDefs = `
   type userProfiles {
     id: ID!
     username: String!
-    score: Number!
+    score: Int!
     recipes: String!
   }
   type Mutation {
     createTodo(text: String!): Todo
-    updateTodo(id: ID!, complete: Boolean!): Boolean
+    updateTodo(id: ID!, text: String!, complete: Boolean!): Boolean
     removeTodo(id: ID!): Boolean
   }
 `
@@ -53,8 +52,8 @@ const resolvers = {
       // and then returning it
       return todo 
     },
-    updateTodo: async (_, {id, complete}) => {
-      await Todo.findByIdAndUpdate(id, {complete})
+    updateTodo: async (_, {id, text, complete}) => {
+      await Todo.findByIdAndUpdate(id, {text}, {complete})
       return true
     },
     removeTodo: async (_, { id }) => {

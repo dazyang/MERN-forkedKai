@@ -4,33 +4,35 @@ import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost'
 import { useDispatch, useSelector } from 'react-redux';
 
-const TodosQuery = gql`
-  {
-    todos {
-      id
-      text
-      complete
-    }
-  }
-`
-function App() {
-  // const userProfiles = useSelector(state => state.profiles.user)
-  const text = useSelector(state => state.todos.text)
-  // const dispatch = useDispatch();
+import UserProfile from './components/page/UserProfile'
 
+// const TodosQuery = gql`
+//   {
+//     todos {
+//       id
+//       text
+//       complete
+//     }
+//   }
+// `
+
+// const UpdateMutation = gql`
+//   mutation($id: ID!, $text: String!, $complet: Boolean!) {
+//     updateTodo(id: $id, text: $text, complet: $complet)    
+//   }
+// `
+function App() {
   const { loading, error, data } = useQuery(TodosQuery)
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
-  return (
+
+    return (
     <div className="App">
       <header className="App-header">
         <p>
         {data.todos[0].text}
         </p>
-        <p>
-        {text}
-        </p>
-        {/* <userProfile/> */}
+        <UserProfile />
       </header>
     </div>
   );
@@ -39,6 +41,6 @@ function App() {
 export default App;
 
 
-// Notes
+// Learning notes
 // useSelector() hook takes the Redux store state and returns the pieces of state you desire. 
 // useDispatch() hook replaces connect()'s mapDispatchToProps. It returns your store's dispatch() method
