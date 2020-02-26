@@ -19,3 +19,7 @@ function UserProfile() {
 }
 
 export default UserProfile;
+
+// Learning notes
+// useSelector() hook takes the Redux store state and returns the pieces of state you desire.
+// useDispatch() hook replaces connect()'s mapDispatchToProps. It returns your store's dispatch() method

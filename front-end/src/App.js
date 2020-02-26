@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost'
 import { useDispatch, useSelector } from 'react-redux';
 
+import Home from './components/page/Home'
 import UserProfile from './components/page/UserProfile'
 
 const TodosQuery = gql`
@@ -22,16 +23,17 @@ const UpdateMutation = gql`
   }
 `
 function App() {
-  const { loading, error, data } = useQuery(TodosQuery)
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  // const { loading, error, data } = useQuery(TodosQuery)
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>Error :(</p>;
 
     return (
     <div className="App">
       <header className="App-header">
-        <p>
+        {/* <p>
         {data.todos[0].text}
-        </p>
+        </p> */}
+        <Home />
         <UserProfile />
       </header>
     </div>
@@ -39,8 +41,3 @@ function App() {
 }
 
 export default App;
-
-
-// Learning notes
-// useSelector() hook takes the Redux store state and returns the pieces of state you desire. 
-// useDispatch() hook replaces connect()'s mapDispatchToProps. It returns your store's dispatch() method
