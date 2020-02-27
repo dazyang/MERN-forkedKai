@@ -2,10 +2,9 @@ import React from 'react';
 import './App.css';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost'
-import { useDispatch, useSelector } from 'react-redux';
 
-import Home from './components/page/Home'
-import UserProfile from './components/page/UserProfile'
+import Home from './components/pages/Home'
+import UserProfile from './components/pages/UserProfile'
 
 const TodosQuery = gql`
   {
@@ -29,7 +28,7 @@ function App() {
 
     return (
     <div className="App">
-      <header className="App-header">
+      <header>
         {/* <p>
         {data.todos[0].text}
         </p> */}
