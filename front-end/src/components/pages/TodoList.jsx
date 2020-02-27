@@ -1,5 +1,6 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
+import { useDispatch, useSelector } from 'react-redux'
 import { gql } from 'apollo-boost'
 
 const TodosQuery = gql`
@@ -17,14 +18,16 @@ const UpdateMutation = gql`
   }
 `
 function TodoList() {
-  // const { loading, error, data } = useQuery(TodosQuery)
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Error :(</p>;
+  const { loading, error, data } = useQuery(TodosQuery)
+  const { text, complete } = useSelector(state => state.todos)
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
   return(
     <div>
       <h1>GraphQL server</h1>
-
+        {/* {data.map(todo)} */}
       <h1>Redux Store</h1>
+
     </div>
   )
 }

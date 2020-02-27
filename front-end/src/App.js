@@ -1,19 +1,12 @@
 import React from 'react';
 import './App.css';
-import Home from './components/pages/Home'
-import UserProfile from './components/pages/UserProfile'
-
-
+import TodoList from './components/pages/TodoList'
 
 function App() {
     return (
     <div className="App">
       <header>
-        {/* <p>
-        {data.todos[0].text}
-        </p> */}
-        <Home />
-        <UserProfile />
+        <TodoList/>
       </header>
     </div>
   );
